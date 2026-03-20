@@ -1,12 +1,15 @@
 spring:
   application:
     name: spring-boot-template
+  h2:
+    console:
+      enabled: true
   datasource:
-    url: jdbc:postgres://localhost:5432/productdb
-    username: postgres
-    password: 123456789
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
     hibernate:
       ddl-auto: update
