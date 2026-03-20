@@ -16,7 +16,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // needed for H2 console
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/h2-console/**").permitAll() // allow H2
+                        .requestMatchers("/h2-console/**","/health").permitAll() // allow H2
                         .anyRequest().authenticated()
                 )
                 .headers(headers -> headers
